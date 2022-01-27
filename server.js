@@ -1,4 +1,3 @@
-const mysql = require("mysql2");
 const express = require("express");
 const PORT = process.emitWarning.PORT || 3001;
 const app = express();
@@ -8,16 +7,6 @@ const inputCheck = require("./utils/inputCheck");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-//connect to database
-const db = mysql.createConnection(
-  {
-    host: "localhost",
-    user: "root",
-    password: "Pilgore1!",
-    database: "election",
-  },
-  console.log("connected to the election database.")
-);
 // get all candidates
 app.get("/api/candidates", (req, res) => {
   const sql = `SELECT candidates.*, parties.name 
