@@ -1,4 +1,4 @@
-const { MODULEDECLARATION_TYPES } = require("@babel/types");
+
 const mysql = require("mysql2");
 
 //connect to database
